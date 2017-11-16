@@ -6,11 +6,6 @@ import AddExpensePage from '../components/AddExpensePage'
 import EditExpensePage from '../components/EditExpensePage'
 import HelpPage from '../components/HelpPage'
 import NotFoundPage from '../components/NotFoundPage'
-// Create six new files for the six components 
-//Use same naming convention 
-//Setup imports 
-//default export
-// import into approuter
 
 const AppRouter = () => (
   <BrowserRouter>
