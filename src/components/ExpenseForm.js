@@ -6,8 +6,6 @@ import 'react-dates/lib/css/_datepicker.css'
 
 
 const now = moment()
-console.log(now.format('MMMM Do YYYY'))
-
 
 export default class ExpenseForm extends React.Component {
     constructor(props) {
@@ -77,7 +75,7 @@ export default class ExpenseForm extends React.Component {
             value={this.state.amount}
             onChange={this.onAmountChange}
           />
-          <br></br>
+          
           <SingleDatePicker
             date={this.state.createdAt}
             onDateChange={this.onDateChange}
@@ -86,7 +84,7 @@ export default class ExpenseForm extends React.Component {
             numberOfMonths={1}
             isOutsideRange={() => false}
           />
-          <br></br>
+          
           <textarea
             placeholder="Add a note for your expense (optional)"
             onChange={this.onNoteChange}
