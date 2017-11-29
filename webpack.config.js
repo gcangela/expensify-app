@@ -1,4 +1,4 @@
-const path =  require('path')
+const path = require('path');
 
 module.exports = {
   entry: './src/app.js',
@@ -25,6 +25,4 @@ module.exports = {
     contentBase: path.join(__dirname, 'public'),
     historyApiFallback: true
   }
-}
-
-
+};
