@@ -3,11 +3,6 @@ import { connect } from 'react-redux';
 import ExpenseForm from './ExpenseForm';
 import { editExpense, removeExpense } from '../actions/expenses';
 
-// Refactor EditExpensePage to be a class based Component
-// // Setup mapDisPatchToProps EditExpense and removeExpense
-
-
-
 export class EditExpensePage extends React.Component {
   onSubmit = (expense) => {
     this.props.editExpense(this.props.expense.id, expense);
