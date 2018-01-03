@@ -21,14 +21,25 @@ database.ref().set({
     city: 'Amsterdam',
     country: 'Netherlands'
   }
-})
+}).then(() => {
+  console.log('Data is saved')
+}).catch((e) => [
+  console.log('error:', e)
+])
 
 // database.ref().set('Dolois')
 
-database.ref('age').set(28)
-database.ref('location/city').set('Rotterdam')
+// database.ref('age').set(28)
+// database.ref('location/city').set('Rotterdam')
+
 database.ref('attributes').set({
   weight: 60,
   height: 171
+}).then(() => {
+  console.log('Data was saved')
+}).catch((e) => {
+  console.log('Something went wrong', e)
 })
+
+console.log('IO made a request to change the data')
 
