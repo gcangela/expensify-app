@@ -27,19 +27,12 @@ database.ref().set({
   console.log('error:', e)
 ])
 
-// database.ref().set('Dolois')
+database.set('isSingle').set(null)
 
-// database.ref('age').set(28)
-// database.ref('location/city').set('Rotterdam')
-
-database.ref('attributes').set({
-  weight: 60,
-  height: 171
-}).then(() => {
-  console.log('Data was saved')
-}).catch((e) => {
-  console.log('Something went wrong', e)
-})
-
-console.log('IO made a request to change the data')
-
+// database.ref('isSingle')
+// .remove()
+// .then(() => {
+//   console.log('Data has been removed')
+// }).catch((e) => {
+//   console.log('Data could not be removed',e)
+// })
