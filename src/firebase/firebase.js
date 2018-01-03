@@ -13,10 +13,83 @@ firebase.initializeApp(config)
 
 const database = firebase.database()
 
-database(ref).on('value', (snapshot) => {
-  const val = snapshot.val()
-  console.log(`${vasl.name} is a ${val.job.title} at ${val.job.company}`)
+database.ref('expenses').on('child_removed', (snapshot) => {
+  console.log(snapshot.key, snapshot.val())
 })
+
+// child_changed
+
+database.ref('expenses').on('child_changed', (snapshot) => {
+  console.log(snapshot.key, snapshot.val())
+})
+database.ref('expenses').on('child_added', (snapshot) => {
+  console.log(snapshot.key, snapshot.val())
+})
+
+
+// database.ref('expenses').on('value', (snapshot) => {
+//       const expenses = []
+
+//     snapshot.forEach((childSnapshot) => {
+//       expenses.push({
+//         id: childSnapshot.key,
+//         ...childSnapshot.val()
+//       })
+//     })
+//     console.log(expenses)
+// })
+
+// database.ref('expenses')
+//   .once('value')
+//   .then((snapshot) => {
+//     const expenses = []
+
+//     snapshot.forEach((childSnapshot) => {
+//       expenses.push({
+//         id: childSnapshot.key,
+//         ...childSnapshot.val()
+//       })
+//     })
+//     console.log(expenses)
+//   })
+
+
+// database.ref('expenses').push({
+//   description: 'Rent',
+//   note: 'pay rent',
+//   amount: 0,
+//   createdAt: 123
+// })
+
+// database.ref('expenses').push({
+//   description: 'alimony',
+//   note: 'fuck my ex wife',
+//   amount: 0,
+//   createdAt: 1324
+// })
+
+database.ref('expenses').push({
+  description: 'Phone',
+  note: 'pay phone bill',
+  amount: 60,
+  createdAt: 122
+})
+
+
+
+
+
+
+
+// database.ref('notes').push({
+//   title: 'Course topics',
+//   body: 'React, PHP'
+// })
+
+// database(ref).on('value', (snapshot) => {
+//   const val = snapshot.val()
+//   console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`)
+// })
 
 // const onValueChange = database.ref().on('value', (snapshot) => {
 //     console.log(snapshot.val())
